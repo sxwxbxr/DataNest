@@ -70,7 +70,7 @@ pnpm install
 Create a `.env` file:
 ```
 DATABASE_URL="file:./dev.db"          # Default: SQLite
-OPENAI_API_KEY="your-openai-key"     # or local model endpoint
+AI_API_KEY="your-ai-key"     # or local model endpoint
 NEXTAUTH_SECRET="some-random-string"
 ```
 
