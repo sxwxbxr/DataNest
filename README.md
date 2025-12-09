@@ -1,8 +1,3 @@
-Here’s a full **README.md** draft for your **DataNest** app built with **Next.js 16.0.2** and **shadcn/ui**. It’s written in a professional, developer-oriented style, suitable for GitHub.  
-
-***
-
-```markdown
 # 🪶 DataNest — Your Personal Code Snippet Vault
 
 DataNest is an **on-premise AI-powered code snippet manager** built with **Next.js 16.0.2** and **shadcn/ui** components.  
@@ -39,7 +34,6 @@ Think of it as a “password safe,” but for your code: store, tag, and search 
 
 ## 📂 Project Structure
 
-```
 data-nest/
 │
 ├─ app/                   # Next.js App Router pages
@@ -54,13 +48,13 @@ data-nest/
 ├─ public/                # Static assets
 ├─ styles/                # Global styles (Tailwind)
 └─ README.md
-```
 
 ---
 
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
+
 ```
 git clone https://github.com/sxwxbxr/DataNest.git
 cd DataNest
@@ -135,6 +129,3 @@ Open a PR or issue on [GitHub](https://github.com/sxwxbxr/DataNest).
 Developed as an on-premise alternative to online snippet managers.  
 Perfect for developers who want **AI-assisted productivity** without **cloud dependency**.
 ```
-***
-
-Would you like the README tailored for a **public open-source release** (with badges, contribution guide, etc.) or a **private internal team project** format (e.g., with setup for Docker, local models, and environment templates)?
