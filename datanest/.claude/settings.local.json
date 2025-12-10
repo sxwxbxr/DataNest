@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(npx tsc:*)",
+      "Bash(pnpm add:*)",
+      "Bash(npx prisma init:*)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(npx prisma:*)"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Search, Sparkles } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -17,10 +18,12 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-3">
-        <Button variant="outline" size="sm" className="gap-2">
-          <Sparkles className="h-4 w-4" />
-          Ask AI
-        </Button>
+        <Link href="/ai-chat">
+          <Button variant="outline" size="sm" className="gap-2">
+            <Sparkles className="h-4 w-4" />
+            Ask AI
+          </Button>
+        </Link>
       </div>
     </header>
   );

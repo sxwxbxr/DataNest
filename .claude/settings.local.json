@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(npx shadcn@latest add button input separator scroll-area -y)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npx prisma generate:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }

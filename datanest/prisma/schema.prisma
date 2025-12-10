@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Snippet {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  code        String
+  language    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  category   Category? @relation(fields: [categoryId], references: [id])
+  categoryId String?
+
+  tags SnippetTag[]
+
+  @@index([language])
+  @@index([categoryId])
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  color       String   @default("bg-blue-500")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  snippets Snippet[]
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  color     String   @default("bg-blue-500")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  snippets SnippetTag[]
+}
+
+model SnippetTag {
+  snippet   Snippet @relation(fields: [snippetId], references: [id], onDelete: Cascade)
+  snippetId String
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  tagId     String
+
+  @@id([snippetId, tagId])
+}
+
+model Settings {
+  id                 String   @id @default("default")
+  aiProvider         String   @default("claude")
+  aiApiKey           String?
+  localModelEndpoint String   @default("http://localhost:11434")
+  theme              String   @default("system")
+  editorTheme        String   @default("dark")
+  fontSize           Int      @default(14)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model AiQuery {
+  id        String   @id @default(cuid())
+  query     String
+  response  String?
+  createdAt DateTime @default(now())
+}

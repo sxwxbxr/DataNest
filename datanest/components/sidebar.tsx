@@ -43,10 +43,12 @@ export function Sidebar() {
       </div>
 
       <div className="p-3">
-        <Button className="w-full justify-start gap-2" size="sm">
-          <Plus className="h-4 w-4" />
-          New Snippet
-        </Button>
+        <Link href="/snippets/new">
+          <Button className="w-full justify-start gap-2" size="sm">
+            <Plus className="h-4 w-4" />
+            New Snippet
+          </Button>
+        </Link>
       </div>
 
       <ScrollArea className="flex-1 px-3">
